@@ -20,10 +20,15 @@ public class CountSteps {
 		String csvSplitBy = ",";
 		double zReadings[] = new double [540];
 
-		File readings = new File("CSE132-studio8/data/readings2.csv");
+		File readings = new File("C:\\Users\\ppate\\git\\studio-8-xu-patel8\\data\\readings2.csv");
 		try {
 			Scanner sc = new Scanner(readings).useDelimiter(csvSplitBy);
-			while ((sc.hasNextDouble()) == true) {
+			while ((sc.hasNextLine()) == true) {
+				String csvReadings = sc.nextLine();
+				csvReadings.split(csvSplitBy);
+				
+				//iterate through the string by 3 to get the Z values
+				
 				for (int i = 0; i < zReadings.length; i = i + 3) {
 					double x = sc.nextDouble();
 					double y = sc.nextDouble();
